@@ -6,7 +6,8 @@ y2 = float(input("y2: ")) #co-ordianate relative to origin, in km
 distance = ((x2 - x1)**2 + (y2 - y1)**2)**(1/2)
 angle = math.atan2((y2-y1),(x2-x1)) * 180/math.pi #Angle made from the x axis to hypotenuse made by the x and y co-ordinates
 #arctan x = pi/2 - arctan(1/x)
-if (y2-y1)/(x2-x1) <= 1:
+slope = (y2-y1)/(x2-x1)
+if slope <= 1:
     print("sumshit")
 else:
     print("other")
