@@ -1,3 +1,11 @@
+"""NickKarpenkoA1Q1
+COMP 1012 SECTION A01
+INSTRUCTOR Saulo Q. Dos Santos
+ASSIGNMENT: A01 Week 01 Activity 2
+AUTHOR Nick Karpenko
+VERSION 2026-Sep-15
+PURPOSE: find the optimal numbers of huge, large, medium, and small containers to "ship" a number of widgets
+"""
 numWidgets = int(input("Number of widgets:"))
 hugeContainers = 0
 largeContainers = 0
