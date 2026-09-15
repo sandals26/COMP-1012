@@ -1,4 +1,4 @@
-numWidgets = 73
+numWidgets = int(input("Number of widgets:"))
 hugeContainers = 0
 largeContainers = 0
 mediumContainers = 0
