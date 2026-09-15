@@ -7,6 +7,7 @@ VERSION 2026-Sep-15
 PURPOSE: find the optimal numbers of huge, large, medium, and small containers to "ship" a number of widgets
 """
 numWidgets = int(input("Number of widgets:"))
+totalNumWidgets = numWidgets
 hugeContainers = 0
 largeContainers = 0
 mediumContainers = 0
@@ -24,4 +25,4 @@ while numWidgets > 0:
     else:
         numWidgets -= 1
         smallContainers += 1
-print("To ship {} widgets, use {} huge containers, {} large containers, {} medium containers, and {} small containers".format(numWidgets, hugeContainers, largeContainers, mediumContainers, smallContainers))
+print("To ship {} widgets, use {} huge containers, {} large containers, {} medium containers, and {} small containers".format(totalNumWidgets, hugeContainers, largeContainers, mediumContainers, smallContainers))
