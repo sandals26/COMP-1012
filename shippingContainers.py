@@ -7,7 +7,7 @@ VERSION 2026-Sep-15
 PURPOSE: find the optimal numbers of huge, large, medium, and small containers to "ship" a number of widgets
 """
 numWidgets = int(input("Number of widgets:"))
-totalNumWidgets = numWidgets
+totalNumWidgets = numWidgets #total number of widgets, used for print statement
 hugeContainers = 0
 largeContainers = 0
 mediumContainers = 0
