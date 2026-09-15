@@ -31,5 +31,5 @@ largeContainers = numWidgets//20 #20 is the amount of widgets a "large container
 numWidgets = numWidgets%20
 mediumContainers = numWidgets//5#5 is the amount of widgets a "medium container" could hold
 numWidgets = numWidgets%5
-smallContainers = numWidgets//1#1 is the amount of widgets a "small container" could hold
+smallContainers = numWidgets#The remaining number of widgets will be able to fit in the 1 large container, if the container size was different, i would use the above methods to figure out how many i need
 print("To ship {} widgets, use {} huge containers, {} large containers, {} medium containers, and {} small containers".format(totalNumWidgets, hugeContainers, largeContainers, mediumContainers, smallContainers))
