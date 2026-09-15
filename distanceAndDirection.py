@@ -1,4 +1,4 @@
-"""DogoodRodneyA1Q1
+"""NickKarpenkoA1Q1
 COMP 1012 SECTION A01
 INSTRUCTOR Saulo Q. Dos Santos
 ASSIGNMENT: A01 Week 01 Activity 1
