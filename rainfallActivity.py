@@ -1,8 +1,7 @@
-print("{:6.2f}".format(12))
-riverArea = 2 #in km squred
+lakeArea = 2 #in km squred
 surroundingArea = 100 #in km squared
-#surroundingArea * rainfall / river area = how much 
-import math
-xdiff = 2 - 1
-ydiff = 2 - 1
-distance = math.sqrt(xdiff**2 + ydiff**2)
+CHANGE_IN_LAKE = 1 # in meters
+#surroundingArea * rainfall / lake area = change in lake height
+rainfall = CHANGE_IN_LAKE*lakeArea*(10**3)/surroundingArea #rainfall in mm
+print("To raise the lake height by {} meter, it would have to rain {:.1f} millimeters".format(CHANGE_IN_LAKE, rainfall))
+
