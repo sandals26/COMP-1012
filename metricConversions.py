@@ -5,4 +5,4 @@ print(f"{inches} in and {feet} ft")
 FT_TO_CM = 30.48
 IN_TO_CM = 2.54
 centimeter = feet * FT_TO_CM + inches * IN_TO_CM
-print("Total distance in cm is {}".format(centimeter))
+print("Total distance in cm is {:.2f}".format(centimeter))
