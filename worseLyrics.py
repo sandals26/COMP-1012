@@ -9,8 +9,11 @@ print(fristWord+" "+lastWord)
 print(thirdWord)
 selectedLetter = input("Selected letter: ")
 firstLetter = lyrics.find(selectedLetter) + 1
-secondLetter = lyrics.find(selectedLetter, firstLetter)
-secondLetterStart = lyrics.rfind(" ",secondLetter) +1
+spaceAfterLetter = lyrics.find(" ",firstLetter) +1
+secondLetter = lyrics.find(selectedLetter, spaceAfterLetter)
+secondLetterStart = lyrics.rfind(" ",0,secondLetter) +1
 secondLetterEnd = lyrics.find(" ", secondLetter)
 secondLetterWord = lyrics[secondLetterStart:secondLetterEnd]
+print(secondLetterWord)
+secondLetterWord = lyrics[lyrics.rfind(" ", 0, secondLetter)+1:lyrics.find(" ", secondLetter)]
 print(secondLetterWord)
