@@ -38,3 +38,5 @@ else:
 
 #prints the final output formatted with the apropriate variables
 print(FINAL_OUTPUT.format(battingAverage, playerPerformance, singles))
+
+print("End of processing")
