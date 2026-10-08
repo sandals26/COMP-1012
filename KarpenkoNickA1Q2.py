@@ -73,11 +73,14 @@ while tryAgain:
     
     #Because enteringDate is set to true at teh start of every "tryAgain" loop, this while loop will always run       
     while enteringDate:
+        
         #casts date input to int numB
         numB = int(input("Please enter the date: "))
+        
         #as long as the date (numB) is greater than 0 and less than or equal to the maximum date of the month selected previously, this loop exits
         if numB > 0 and numB <= MONTH_BOUNDS[monthIndex]:
             enteringDate = False
+            
         #Restarts loop if numB was out of bounds
         else:
             print("Please enter a valid date for the month you chose")
@@ -109,6 +112,7 @@ while tryAgain:
             #num D is the first two digits of the year so it slices up to (but not including) the third digit
             numD = int(yearToSlice[:2])
             enteringYear = False
+            
         else:
             #prints error message 
             print("Please input a 4 digit year")
@@ -127,10 +131,12 @@ while tryAgain:
     #Formula for Zeller's algorithim (whoose output is 0 = saturday, 1 = sunday, 2 = monday,..., 6 = friday 
     # which corresponds to the indeces of WEEKDAYS)
     numWeekday = int(((13 * (numA + 1) / 5) + (numC / 4) + (numD / 4) + numB + numC + (numD * 5))%7)
+    
     #prints out the final output
-    print("{} {} {} is {}".format(MONTHS[monthIndex], numB, userYear, WEEKDAYS[numWeekday]))
+    print("{} {}, {} is a {}".format(MONTHS[monthIndex], numB, userYear, WEEKDAYS[numWeekday]))
     
     #If the user inpus anything but "y", the main loop ends and program is terminated
     if input("Would you like to enter another date? (y/n): ") != "y":
         tryAgain = False
+        
 print("End of processing")
