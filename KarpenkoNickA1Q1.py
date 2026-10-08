@@ -2,7 +2,7 @@
 COMP 1012 SECTION A01
 INSTRUCTOR Saulo Santos
 ASSIGNMENT: A1 Question 1
-AUTHOR [Nick Karpenko
+AUTHOR Nick Karpenko
 VERSION 2026-Oct-6
 PURPOSE: Find the batting average, the number of singles, and the performance rating of a baseball player 
 """
