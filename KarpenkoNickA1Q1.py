@@ -29,10 +29,13 @@ playerPerformance = ""
 #Checks to see at what range does the batting average lie in and giving the corresponding grading 
 if battingAverage >= 0.3:
     playerPerformance = "Excellent"
+    
 elif battingAverage < 0.3 and battingAverage >= 0.25:
     playerPerformance = "Good"
+    
 elif battingAverage < 0.25 and battingAverage >= 0.2:
     playerPerformance = "Average"
+    
 else:
     playerPerformance = "Needs improvement"
 

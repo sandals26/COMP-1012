@@ -3,16 +3,19 @@ COMP 1012 SECTION A01
 INSTRUCTOR Saulo Santos
 ASSIGNMENT: A1 Question 2
 AUTHOR Nick Karpenko
-VERSION 2026-Oct-8
+VERSION 2026-Oct-9
 PURPOSE: To find which day of the week a date is using Zellers algorithim
 """
 #This boolean controls if the program would run again
 tryAgain = True
+
 #At the end, the user is prompted to enter another date, which changes tryAgain and dictates if the loop should continue
 while tryAgain:
+    
     #---------------------------------------------------------------------------------------------------------------
     #Declaring variables
     #---------------------------------------------------------------------------------------------------------------
+    
     #MONTHS are the diffrent months starting from march because Zellers algorithim starts conuting from march
     MONTHS = ["march", "april", "may", "june", "july", "august", "september", "october", "november", "december", "january", "february"]
     #The maximum dates each month holds, i.e march has 31, april 30, and February 29 (This is in case the user enters a leap year, if they don't they are reprompted to enter a date that is < 29)
@@ -58,6 +61,7 @@ while tryAgain:
                 monthIndex = numA - 3
                 #To exit the loop and not write the error message
                 enteringMonth = False
+                
             #so that numA doesn't increment once a month is recognised
             elif enteringMonth:
                 #numA is incremented by 1 because each time this loops it moves on to the next month
@@ -90,7 +94,8 @@ while tryAgain:
     #--------------------------------------------------------------------------------------------------------------- 
     
     while enteringYear:
-        #yearToSlice is the year that will be spliced to find numC and numD
+        
+        #yearToSlice is the year that will be sliced to find numC and numD
         yearToSlice = input("Please enter the year: ")
         #Year the user has entered but in int form
         userYear = int(yearToSlice)
@@ -117,26 +122,29 @@ while tryAgain:
             #prints error message 
             print("Please input a 4 digit year")
     
-    #Pretty much an if stattment that loops. if it isn't a leap year (so february only has 28 days) and the month is
-    #February and the date (numB) is greater than 28 (which means 29 or above and thus not in the month of february)
-    #and is less than or equal to 0 (which cant be a date because there is no day 0 or -1 in february), this loops
-    #and asks for a new date until conditions are satisfied
-    while not isLeapYear and monthIndex == 11 and numB > 28 and numB <= 0:
-        numB = int(input("Because this year is not a leap year the date previously entered is not possible, please enter a new date for this month: "))
-    
     #---------------------------------------------------------------------------------------------------------------
     #Calulating the date and restarting program
     #--------------------------------------------------------------------------------------------------------------- 
     
-    #Formula for Zeller's algorithim (whoose output is 0 = saturday, 1 = sunday, 2 = monday,..., 6 = friday 
-    # which corresponds to the indeces of WEEKDAYS)
-    numWeekday = int(((13 * (numA + 1) / 5) + (numC / 4) + (numD / 4) + numB + numC + (numD * 5))%7)
+    # if monthindex != 11, the month isnt february and monthbounds dont need to be checked again, thus this would be true
+    # and  it would not print the error message. If it is a leap year then the monthBounds for february would already be correct
+    # as checked earlier. And if the numB (date) is less than or equal to 28, then its still alright as february
+    # has 28 days normally.
+    if monthIndex != 11 or isLeapYear or numB <= 28:
+       
+        #Formula for Zeller's algorithim (whoose output is 0 = saturday, 1 = sunday, 2 = monday,..., 6 = friday 
+        # which corresponds to the indeces of WEEKDAYS)
+        numWeekday = int(((13 * (numA + 1) / 5) + (numC / 4) + (numD / 4) + numB + numC + (numD * 5))%7)
+        
+        #prints out the final output
+        print("{} {}, {} is a {}".format(MONTHS[monthIndex], numB, userYear, WEEKDAYS[numWeekday]))
     
-    #prints out the final output
-    print("{} {}, {} is a {}".format(MONTHS[monthIndex], numB, userYear, WEEKDAYS[numWeekday]))
-    
-    #If the user inpus anything but "y", the main loop ends and program is terminated
-    if input("Would you like to enter another date? (y/n): ") != "y":
-        tryAgain = False
+        #If the user inpus anything but "y", the main loop ends and program is terminated
+        if input("Would you like to enter another date? (y/n): ") != "y":
+            tryAgain = False
+            
+    #Prints error message if it isnt a leapyear and is february and date is 29
+    else:
+        print("This is not a real date (its not a leap year and february is more than 28)")    
         
 print("End of processing")
